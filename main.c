@@ -1,10 +1,18 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-int main(){
-    int n = 42;
-    unsigned int ui = 10;
-    float f = 3.14;
-    double d = 3.141592;
-    char c = 'a';
-    printf("%i, %u, %f, %f, %c\n", n, ui, f, d, c);
+#include "guessing.h"
+
+int main()
+{
+    srand(time(0));
+    
+    const int min = 0, max = 100;
+    
+    const int target = get_target(min, max);
+
+    printf("Tippelj %i és %i között\n", min, max);
+
+    evaluate(target);    
 }

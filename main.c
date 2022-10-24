@@ -1,18 +1,42 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include "math_util.h"
 
-#include "guessing.h"
+//int b;  == static int a, másik fájlból is elérthető
+//static int c; // a main.c-ből bárhonnan elérhető, de más fájlból nem
+
+/*
+void addtwod(double* value)
+{
+    (*value) += 2;
+}
+
+void addtwoint(int* value)
+{
+    double* d = (double*)(value);
+    addtwod(d);
+}
+*/
 
 int main()
 {
-    srand(time(0));
-    
-    const int min = 0, max = 100;
-    
-    const int target = get_target(min, max);
+    //static int a;
 
-    printf("Tippelj %i és %i között\n", min, max);
+    int n = 10;
 
-    evaluate(target);    
+    int fact = factorial(n);
+    printf("factorial of %i = %i\n", n, fact);
+
+    int fact2 = factorial(4);
+    printf("factorial of %i = %i\n", n, fact2);
+
+    int fact3 = factorial(0);
+    printf("factorial of %i = %i\n", n, fact3);
+
+    int fact4 = factorial(3);
+    printf("factorial of %i = %i\n", n, fact4);
+
+    printf("Ennyiszer volt meghivva a faktorialis: %i\n", cnt);
+
+    int fibonacci = fib(49);
+    printf("Fibonacci of %i = %i\n", 49, fibonacci);
 }
